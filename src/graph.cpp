@@ -27,13 +27,13 @@ public:
 };
 
 
-
+// Aristas con peso
 class Arista {
 public:
 
     const Nodo* n1; // puntero al nodo
     const Nodo* n2; // puntero al nodo
-    double_t peso;  // cuadrado de la distancia euclidiana
+    int64_t peso;  // cuadrado de la distancia euclidiana
 
     // Constructor: calcula el peso de una arista al ser creada
     Arista(Nodo* nodo1, Nodo* nodo2) : n1(nodo1), n2(nodo2)
@@ -51,7 +51,16 @@ public:
     std::vector<Arista> E; // lista de aristas
 
     Graph(std::vector<Nodo> Vertices): V(Vertices) { 
-        
+    }
+
+
+    /**
+     * Este método crea todas la aristas posibles para los nodos que tenga el grafo.
+     * Si el grafo ya tenía aristas agregadas se vaciarán antes.
+     */
+    void addAllEdges(){
+        E.clear();
+        // Se asume que no hay self loops
         for (int i=0; i<V.size(); i++){
             for(int j=i+1; j<V.size(); j++){
                 Arista a(&V[i], &V[j]);
@@ -60,7 +69,25 @@ public:
         }
     }
 
+    /*
+        Este método imprime todos los nodos creados y las aristas creadas con sus respectivos pesos
+        Ejemplo de uso:
+            std::vector<Nodo> nodos1 = { Nodo(1, 2), Nodo(4, 6), Nodo(-3, 7) };
+            Graph g1(nodos1);
+            g1.addAllEdges();
+            g1.print();
+            
+        Devuelve:
+            Nodos:
+                Nodo 0: (1, 2)
+                Nodo 1: (4, 6)
+                Nodo 2: (-3, 7)
 
+            Aristas:
+                (0, 1)  peso: 25
+                (0, 2)  peso: 41
+                (1, 2)  peso: 50
+    */
     void print() const {
         std::cout << "\nNodos:" << std::endl;
         for (size_t i = 0; i < V.size(); ++i) {
@@ -80,22 +107,4 @@ public:
     }
 };
 
-/*
-    Llamar con 
-        g++ -o ./exe/graph graph.cpp
-    Ejecutar con 
-        ./exe/graph
-*/
 
-int main(){
-    std::vector<Nodo> nodos1 = { Nodo(1, 2), Nodo(4, 6), Nodo(-3, 7) };
-    Graph g1(nodos1);
-
-    std::vector<Nodo> nodos2 = { Nodo(), Nodo(), Nodo(), Nodo(1,1) };
-    Graph g2(nodos2);
-
-    g1.print();
-    g2.print();
-
-    return 0;
-}

@@ -15,7 +15,7 @@ public:
     // Constructor: asigna los valores de (x,y) al nodo
     Node(int64_t x_val, int64_t y_val) : x(x_val), y(y_val) {} 
 
-    // Constructor: si no se le dan los valores (x,y) crea valores aleatorios
+    // Constructor: si no le dan los valores (x,y) crea valores aleatorios
     Node() {
         std::random_device rd;
         std::mt19937 gen(rd());
@@ -30,14 +30,12 @@ public:
 // Aristas con peso
 class Edge {
 public:
-
     const Node* n1; // puntero al nodo
     const Node* n2; // puntero al nodo
-    int64_t peso;  // cuadrado de la distancia euclidiana
+    int64_t peso;   // cuadrado de la distancia euclidiana
 
     // Constructor: calcula el peso de una arista al ser creada
-    Edge(Node* nodo1, Node* nodo2) : n1(nodo1), n2(nodo2)
-    { 
+    Edge(Node* nodo1, Node* nodo2) : n1(nodo1), n2(nodo2){ 
         peso = std::pow((nodo1->x - nodo2->x), 2) + std::pow((nodo1->y - nodo2->y), 2);
     }
 };
@@ -46,28 +44,13 @@ public:
 // La idea es pasarle una lista de nodos y el grafo crea las N*(N-1)/2 aristas posibles entre ellos
 class Graph{
 public:
-    // Parámetros de un grafo
-    std::vector<Node> V; // lista de nodos
-    std::vector<Edge> E; // lista de aristas
+    std::vector<Node> V; // Lista de nodos
+    std::vector<Edge> E; // Lista de aristas
 
     Graph(std::vector<Node> Vertices): V(Vertices) { 
         for (int i=0; i<V.size(); i++) V[i].id = i; // Asigna un id a cada nodo
     }
 
-    /**
-     * Agrega una nueva arista al grafo.
-     * 
-     * IMPORTANTE: Para agregar aristas se debe dar la dirección al nodo en la lista de nodos de grafo. Por ningún motivo crear nodos nuevos.
-     * Ejemplo: 
-     *      std::vector<Node> nodos1 = { Node(1, 2), Node(4, 6), Node(-3, 7), Node(1,1), Node(2,3), Node(0,4) };
-     *      Graph g1(nodos1);
-     *      g1.addEdge(&g1.V[0], &g1.V[1]);
-     */
-
-    void addEdge(Node* n1, Node* n2){
-        Edge a(n1, n2);
-        E.push_back(a);
-    }
 
     /**
      * Este método crea todas la aristas posibles para los nodos que tenga el grafo.

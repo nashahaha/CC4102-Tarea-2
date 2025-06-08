@@ -26,37 +26,35 @@ std::vector<Edge> kruskal_array(Graph g){
 // Algoritmo de Kruskal con la optimización de find y usando un arreglo de aristas ordenado
 // Retorna la lista de aristas que minimiza el costo
 std::vector<Edge> kruskal_array_Opti(Graph& G){
+    
     // Se ordenan las aristas por peso
     std::vector<Edge> sorted_edges = G.E;
     std::sort (sorted_edges.begin(), sorted_edges.end(), sortByWeight);
     
-    int n = G.V.size(); // contador de aristas
+    int n = G.V.size();
     std::vector<Edge> result;
 
     UnionFind uf(n);
 
     for (auto& edge : sorted_edges){
-        int idx1 = -1, idx2 = -1;
-
         if (uf.union_(edge.n1->id, edge.n2->id)) { 
             result.push_back(edge);
             if (result.size() == n - 1) break; // cuando se encuentran n-1 aristas se termina
         }
     }
 
-
     return result;
 }
 
-//Duncion auxiliar para ver que aristas se escogieron como optimas
+//Funcion auxiliar para ver que aristas se escogieron como optimas
 void printEdges(std::vector<Edge> edgesList){
     std::cout << "Las aristas que minimizan el peso son: ";
     for(auto a :edgesList){
-        std::cout << "(" << a.n1->id << "," << a.n2->id << ")" <<
-        " -> w:" << a.peso << "  ";
+        std::cout << "(" << a.n1->id << "," << a.n2->id << ")" << " -> w:" << a.peso << "  ";
     }
     std::cout << "\n";
 }
+
 
 int main(){
     std::vector<Node> nodos1 = { Node(1, 2), Node(4, 6), Node(-3, 7), Node(1,1), Node(2,3), Node(0,4) };

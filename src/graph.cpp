@@ -90,7 +90,7 @@ public:
     void print() const {
         std::cout << "\nNodos:" << std::endl;
         for (size_t i = 0; i < V.size(); ++i) {
-            std::cout << "  Nodo " << V[i].id << ": (" << V[i].x << ", " << V[i].y << ")" << std::endl;
+            std::cout << "  Nodo " << V[i].id << ": (" << V[i].x << ", " << V[i].y << "), ";
         }
     
         std::cout << "\nAristas:" << std::endl;

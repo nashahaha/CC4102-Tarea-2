@@ -3,8 +3,26 @@
 #include <fstream>
 #include "kruskal.cpp"
 #include <chrono>
+bool mismosPesos(const std::vector<Edge>& A,
+                 const std::vector<Edge>& B,
+                 const std::vector<Edge>& C,
+                 const std::vector<Edge>& D) {
 
-void runExpirement(int64_t N){
+    auto suma = [](const std::vector<Edge>& edges) -> int64_t {
+    int64_t total = 0;
+    for (const Edge& e : edges) total += e.peso;
+    return total;
+    };
+
+    int64_t pesoA = suma(A);
+    int64_t pesoB = suma(B);
+    int64_t pesoC = suma(C);
+    int64_t pesoD = suma(D);
+
+    return (pesoA == pesoB) && (pesoB == pesoC) && (pesoC == pesoD);
+}
+
+void runExpirement(int N){
     // Contar el tiempo de construcción
     std::cout << "Creando grafo de " << N << " aristas \n";
     auto startConstruction = std::chrono::high_resolution_clock::now();
@@ -16,7 +34,7 @@ void runExpirement(int64_t N){
     Graph G(nodos);
     G.addAllEdges();
     auto endConstruction = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> constructionDuration = startConstruction - endConstruction;
+    std::chrono::duration<double> constructionDuration = endConstruction - startConstruction;
     std::cout << "Grafo construido en " << constructionDuration.count() << " segundos.\n";
 
     // Buscar árbol con los cuatro métodos
@@ -24,7 +42,7 @@ void runExpirement(int64_t N){
     auto startMSTarray = std::chrono::high_resolution_clock::now();
     std::vector<Edge> MST_array = kruskal_array(G);
     auto endMSTarray = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> MSTarrayDuration = startMSTarray - endMSTarray;
+    std::chrono::duration<double> MSTarrayDuration = endMSTarray - startMSTarray;
     std::cout << "Arbol encontrado en " << MSTarrayDuration.count() << " segundos.\n";
 
 
@@ -32,7 +50,7 @@ void runExpirement(int64_t N){
     auto startMSTarrayUF = std::chrono::high_resolution_clock::now();
     std::vector<Edge> MST_array_opt = kruskal_array_Opti(G);
     auto endMSTarrayUF = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> MSTarrayUFDuration = startMSTarrayUF - endMSTarrayUF;
+    std::chrono::duration<double> MSTarrayUFDuration = endMSTarrayUF - startMSTarrayUF;
     std::cout << "Arbol encontrado en " << MSTarrayUFDuration.count() << " segundos.\n";
 
     
@@ -40,7 +58,7 @@ void runExpirement(int64_t N){
     auto startMSTheap = std::chrono::high_resolution_clock::now();
     std::vector<Edge> MST_heap = kruskal_heap(G);
     auto endMSTheap = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> MSTheapDuration = startMSTheap - endMSTheap;
+    std::chrono::duration<double> MSTheapDuration = endMSTheap - startMSTheap;
     std::cout << "Arbol encontrado en " << MSTheapDuration.count() << " segundos.\n";
     
 
@@ -48,11 +66,15 @@ void runExpirement(int64_t N){
     auto startMSTheapUF = std::chrono::high_resolution_clock::now();
     std::vector<Edge> MST_heap_opt = kruskal_heap_Opti(G);
     auto endMSTheapUF = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> MSTheapUFDuration = startMSTheapUF - endMSTheapUF;
+    std::chrono::duration<double> MSTheapUFDuration = endMSTheapUF - startMSTheapUF;
     std::cout << "Arbol encontrado en " << MSTheapUFDuration.count() << " segundos.\n";
     
 
     // Verificar que todos obtuvieron el mismo peso
+    if(!mismosPesos(MST_array, MST_array_opt, MST_heap, MST_heap_opt)){
+        std::cerr << "Error: no se obtuvieron los mismos pesos";
+        exit(1);
+    }
 
 
     // Mostrar resultados
@@ -90,23 +112,11 @@ void runExpirement(int64_t N){
 }
 
 int main(){
-    std::vector<Node> nodos1 = { Node(1, 2), Node(4, 6), Node(-3, 7), Node(1,1), Node(2,3), Node(0,4) };
-    Graph g1(nodos1);
-    g1.addAllEdges();
-    g1.print();
-
-    std::vector<Edge> aristasOpt = kruskal_array_Opti(g1);
-    printEdges(aristasOpt);
-    std::vector<Edge> aristas = kruskal_array(g1);
-    printEdges(aristas);
-    std::vector<Edge> aristasHeap1 = kruskal_heap(g1);
-    printEdges(aristasHeap1);
-    std::vector<Edge> aristasHeapOpti1 = kruskal_heap_Opti(g1);
-    printEdges(aristasHeapOpti1);
 
     for(int i=5; i<=12; i++){
-        for(int j=0; i<5; j++){
-
+        int N = std::pow(2, i);
+        for(int j=0; j<5; j++){
+            runExpirement(N);
         }
     }
 

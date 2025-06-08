@@ -8,10 +8,10 @@
 // Cada nodo es un par ordenado de enteros de 64 bits
 class Node {
 public:
+    int id; // Lo asigna el grafo, se usa en UnionFind
     int64_t x;
     int64_t y;
-    int id; // Lo asigna el grafo, se usa en UnionFind
-
+    
     // Constructor: asigna los valores de (x,y) al nodo
     Node(int64_t x_val, int64_t y_val) : x(x_val), y(y_val) {} 
 

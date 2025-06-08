@@ -1,360 +1,405 @@
 ----- Resultado del experimento -----
 Tamaño del input: 32 pares de enteros.       
-Tiempo de creación del grafo: 0.0056227
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000138475 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000118575 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 8.9652e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000102666 segundos. 
+Tiempo de creación del grafo: 0.00362639
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000409621 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000345992 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 9.6417e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 8.64e-05 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 32 pares de enteros.       
-Tiempo de creación del grafo: 0.00336131
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 8.7113e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 8.4681e-05 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.000100696 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000104018 segundos. 
+Tiempo de creación del grafo: 0.00317784
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 8.0622e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 7.2499e-05 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 5.7662e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 6.3751e-05 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 32 pares de enteros.       
-Tiempo de creación del grafo: 0.00208143
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 7.2015e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 6.6233e-05 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 5.2269e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 4.241e-05 segundos. 
+Tiempo de creación del grafo: 0.00198958
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 8.0982e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 8.2873e-05 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 6.5283e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 5.8784e-05 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 32 pares de enteros.       
-Tiempo de creación del grafo: 0.0076443
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 7.0326e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 6.9807e-05 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 5.9696e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 5.4944e-05 segundos. 
+Tiempo de creación del grafo: 0.00180612
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 7.6637e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 8.5299e-05 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 9.0435e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 7.7041e-05 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 32 pares de enteros.       
-Tiempo de creación del grafo: 0.00225767
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 7.0473e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 6.9633e-05 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 5.9512e-05 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 5.8806e-05 segundos. 
+Tiempo de creación del grafo: 0.00193938
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 6.8679e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 6.6721e-05 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 5.2129e-05 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 4.9918e-05 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 64 pares de enteros.       
-Tiempo de creación del grafo: 0.00369493
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00248674 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00382366 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.000578513 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000317323 segundos. 
+Tiempo de creación del grafo: 0.00529655
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00203844 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000385699 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.000209371 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.000179565 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 64 pares de enteros.       
-Tiempo de creación del grafo: 0.00756974
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000646968 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000538484 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.000333214 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000309867 segundos. 
+Tiempo de creación del grafo: 0.00445005
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000407757 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000334463 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.000246474 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.000224646 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 64 pares de enteros.       
-Tiempo de creación del grafo: 0.00409199
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000678364 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000588927 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.000394319 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000409834 segundos. 
+Tiempo de creación del grafo: 0.00669959
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000336145 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000309339 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.000218384 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.000189941 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 64 pares de enteros.       
-Tiempo de creación del grafo: 0.00307882
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000340513 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000691367 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.000548094 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000404485 segundos. 
+Tiempo de creación del grafo: 0.00256015
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000425389 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000390232 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.00121987 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.000259707 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 64 pares de enteros.       
-Tiempo de creación del grafo: 0.00274685
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.000656834 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000363154 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.000813555 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000441659 segundos. 
+Tiempo de creación del grafo: 0.00310671
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00036447 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.000385845 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.000246014 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.000256884 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 128 pares de enteros.       
-Tiempo de creación del grafo: 0.00819017
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00170481 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00199697 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00193382 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.00100515 segundos. 
+Tiempo de creación del grafo: 0.0126356
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00160505 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00172522 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.000808717 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.000949354 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 128 pares de enteros.       
-Tiempo de creación del grafo: 0.012741
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00271134 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00236019 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00133718 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.000767718 segundos. 
+Tiempo de creación del grafo: 0.0125758
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00177097 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00178696 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.00094804 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.000911487 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 128 pares de enteros.       
-Tiempo de creación del grafo: 0.00537421
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00215663 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00173835 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00160221 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.00132257 segundos. 
+Tiempo de creación del grafo: 0.00597542
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0018602 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00791973 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.00130324 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0132209 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 128 pares de enteros.       
-Tiempo de creación del grafo: 0.00606138
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00273927 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0076748 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00157899 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0012997 segundos. 
+Tiempo de creación del grafo: 0.00626274
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00173349 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00152584 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0022177 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.00274846 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 128 pares de enteros.       
-Tiempo de creación del grafo: 0.0114273
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00163396 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00144257 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00080301 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.00079405 segundos. 
+Tiempo de creación del grafo: 0.00647983
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00180443 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00184842 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.000986668 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.00154544 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 256 pares de enteros.       
-Tiempo de creación del grafo: 0.0203763
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00822093 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00697069 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00401763 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.00285435 segundos. 
+Tiempo de creación del grafo: 0.0227905
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00804617 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00712103 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0110888 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.00230873 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 256 pares de enteros.       
-Tiempo de creación del grafo: 0.0184603
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0166573 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0063086 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00570323 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0128407 segundos. 
+Tiempo de creación del grafo: 0.0140273
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0188739 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00802155 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.00390921 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0254182 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 256 pares de enteros.       
-Tiempo de creación del grafo: 0.0313378
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0131834 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0189386 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00929978 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.00431012 segundos. 
+Tiempo de creación del grafo: 0.0284436
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0126355 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.00773723 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.00421912 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0101508 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 256 pares de enteros.       
-Tiempo de creación del grafo: 0.0311301
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.011778 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0173973 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00285968 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0105047 segundos. 
+Tiempo de creación del grafo: 0.031367
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0276081 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0217113 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.00384512 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0150002 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 256 pares de enteros.       
-Tiempo de creación del grafo: 0.0233581
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0129812 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0244233 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.00355942 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.00563844 segundos. 
+Tiempo de creación del grafo: 0.0280876
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.00987498 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0159505 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.00303887 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.00742545 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 512 pares de enteros.       
-Tiempo de creación del grafo: 0.0629427
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.036043 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0719314 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0110381 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0216091 segundos. 
+Tiempo de creación del grafo: 0.0588712
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.033999 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0513765 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0177384 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0152163 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 512 pares de enteros.       
-Tiempo de creación del grafo: 0.0506149
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0510169 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0422766 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0197166 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0106702 segundos. 
+Tiempo de creación del grafo: 0.0764803
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0622127 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0366896 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0161676 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0341625 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 512 pares de enteros.       
-Tiempo de creación del grafo: 0.0337293
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.035622 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.064988 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0157273 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0137586 segundos. 
+Tiempo de creación del grafo: 0.0637006
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.123565 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.104163 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0574022 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0140438 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 512 pares de enteros.       
-Tiempo de creación del grafo: 0.0644808
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0333253 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0311116 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0180766 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0303808 segundos. 
+Tiempo de creación del grafo: 0.0528423
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0524462 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0315506 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0297581 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0119726 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 512 pares de enteros.       
-Tiempo de creación del grafo: 0.0421674
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0509567 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.0291418 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0237768 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0369385 segundos. 
+Tiempo de creación del grafo: 0.0388305
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.0401749 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.044198 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0138326 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0169942 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 1024 pares de enteros.       
-Tiempo de creación del grafo: 0.12725
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.139813 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.13328 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0619496 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0559972 segundos. 
+Tiempo de creación del grafo: 0.0993596
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.149772 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.145465 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0506103 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0491724 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 1024 pares de enteros.       
-Tiempo de creación del grafo: 0.099497
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.123648 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.141106 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0520473 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0465181 segundos. 
+Tiempo de creación del grafo: 0.0898438
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.148219 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.138577 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0473458 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.050762 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 1024 pares de enteros.       
-Tiempo de creación del grafo: 0.0874979
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.137808 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.144839 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0421522 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0488714 segundos. 
+Tiempo de creación del grafo: 0.0952266
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.157365 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.153708 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0557621 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0540135 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 1024 pares de enteros.       
-Tiempo de creación del grafo: 0.0915814
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.136534 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.155632 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.102697 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.069294 segundos. 
+Tiempo de creación del grafo: 0.109167
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.150823 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.149688 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0493572 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0560745 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 1024 pares de enteros.       
-Tiempo de creación del grafo: 0.0926913
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.149584 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.150368 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.0541509 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.0630815 segundos. 
+Tiempo de creación del grafo: 0.0881246
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.137616 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.133342 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.0476897 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.0496127 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 2048 pares de enteros.       
-Tiempo de creación del grafo: 0.283097
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.669194 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.603567 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.262021 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.172646 segundos. 
+Tiempo de creación del grafo: 0.23654
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.613421 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.635469 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.223833 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.172416 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 2048 pares de enteros.       
-Tiempo de creación del grafo: 0.230129
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.582584 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.591073 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.192433 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.193424 segundos. 
+Tiempo de creación del grafo: 0.217737
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.575469 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.592348 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.171714 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.171808 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 2048 pares de enteros.       
-Tiempo de creación del grafo: 0.237989
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.585316 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.585146 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.183941 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.175182 segundos. 
+Tiempo de creación del grafo: 0.220928
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.572748 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.555548 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.180387 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.176826 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 2048 pares de enteros.       
-Tiempo de creación del grafo: 0.238942
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.627535 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.587724 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.179953 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.177048 segundos. 
+Tiempo de creación del grafo: 0.229037
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.629966 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.591333 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.184153 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.173312 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 2048 pares de enteros.       
-Tiempo de creación del grafo: 0.218105
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.592965 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.560964 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.176613 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.17442 segundos. 
+Tiempo de creación del grafo: 0.211313
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 0.603304 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 0.610157 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.203034 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.216023 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 4096 pares de enteros.       
-Tiempo de creación del grafo: 0.902885
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.94817 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.51193 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 1.09835 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.732119 segundos. 
+Tiempo de creación del grafo: 1.19695
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 3.02686 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.967 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.95918 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.748492 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 4096 pares de enteros.       
-Tiempo de creación del grafo: 0.739926
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.63874 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.5188 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.703597 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.729122 segundos. 
+Tiempo de creación del grafo: 0.723865
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.85201 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.70236 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.745939 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.709073 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 4096 pares de enteros.       
-Tiempo de creación del grafo: 0.704517
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.58235 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.64537 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.804453 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.752885 segundos. 
+Tiempo de creación del grafo: 0.728973
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.6449 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.55068 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.705685 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.713656 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 4096 pares de enteros.       
-Tiempo de creación del grafo: 0.722054
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 3.1035 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.57881 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.689128 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.701576 segundos. 
+Tiempo de creación del grafo: 0.717937
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.63246 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.74192 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.777497 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.743672 segundos. 
 --------------------------------------
 
 ----- Resultado del experimento -----
 Tamaño del input: 4096 pares de enteros.       
-Tiempo de creación del grafo: 0.726989
-Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.61398 segundos. 
-Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.99688 segundos.
-Tiempo de Kruskal sin optimización find y usando un heap: 0.745785 segundos. 
-Tiempo de Kruskal con optimización find y usando un heap: 0.69448 segundos. 
+Tiempo de creación del grafo: 0.818171
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 2.89644 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 2.91198 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 0.733673 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 0.736709 segundos. 
+--------------------------------------
+
+----- Resultado del experimento -----
+Tamaño del input: 8192 pares de enteros.       
+Tiempo de creación del grafo: 3.04857
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 12.0833 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 10.916 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 4.01728 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 3.80438 segundos. 
+--------------------------------------
+
+----- Resultado del experimento -----
+Tamaño del input: 8192 pares de enteros.       
+Tiempo de creación del grafo: 3.2966
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 12.0343 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 11.8885 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 3.13436 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 3.47026 segundos. 
+--------------------------------------
+
+----- Resultado del experimento -----
+Tamaño del input: 8192 pares de enteros.       
+Tiempo de creación del grafo: 2.87255
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 12.6605 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 11.922 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 3.29517 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 3.43834 segundos. 
+--------------------------------------
+
+----- Resultado del experimento -----
+Tamaño del input: 8192 pares de enteros.       
+Tiempo de creación del grafo: 3.08983
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 12.4937 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 12.6401 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 3.07855 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 3.65694 segundos. 
+--------------------------------------
+
+----- Resultado del experimento -----
+Tamaño del input: 8192 pares de enteros.       
+Tiempo de creación del grafo: 2.75102
+Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: 11.1191 segundos. 
+Tiempo de Kruskal con optimización find y usando un arreglo ordenado: 10.6346 segundos.
+Tiempo de Kruskal sin optimización find y usando un heap: 2.89979 segundos. 
+Tiempo de Kruskal con optimización find y usando un heap: 2.83273 segundos. 
 --------------------------------------
 

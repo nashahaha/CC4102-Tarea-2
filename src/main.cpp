@@ -103,17 +103,22 @@ void runExpirement(int N){
         std::cerr << "No se pudo escribir el resumen en 'resumen_experimentos.txt'\n";
     }
 
-    std::ofstream data("data_experimentos.txt", std::ios::app);
+    std::ofstream data("resultados.csv", std::ios::app);
     if(data){
-        data << N << ", " << constructionDuration.count() << ", " << MSTarrayDuration.count() << ", " << MSTarrayUFDuration.count() << ", " << MSTheapDuration.count() << ", " << MSTheapUFDuration.count() << "\n";
+        data << N << "," 
+             << constructionDuration.count() << "," 
+             << MSTarrayDuration.count() << "," 
+             << MSTarrayUFDuration.count() << "," 
+             << MSTheapDuration.count() << "," 
+             << MSTheapUFDuration.count() << "\n";
     } else {
-        std::cerr << "No se pudo escribir el resumen en 'data_experimentos.txt'\n";
+        std::cerr << "No se pudo escribir el resumen en 'resultados.csv'\n";
     }
 }
 
 int main(){
 
-    for(int i=5; i<=12; i++){
+    for(int i=5; i<=15; i++){
         int N = std::pow(2, i);
         for(int j=0; j<5; j++){
             runExpirement(N);

@@ -14,8 +14,8 @@
 class Node {
 public:
     int id; // Lo asigna el grafo, se usa en UnionFind
-    int64_t x;
-    int64_t y;
+    double x;
+    double y;
     
     /**
      * @brief Constructor con valores definidos.
@@ -25,7 +25,7 @@ public:
      * @param x_val Valor de la coordenada X.
      * @param y_val Valor de la coordenada Y.
      */
-    Node(int64_t x_val, int64_t y_val) : x(x_val), y(y_val) {} 
+    Node(double x_val, double y_val) : x(x_val), y(y_val) {} 
 
     /**
      * @brief Constructor por defecto.
@@ -34,8 +34,8 @@ public:
      */
     Node() {
         std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<int64_t> dist(-50, 50);
+        std::mt19937_64 gen(rd());
+        std::uniform_real_distribution<double> dist(0.0, 1.0);
 
         x = dist(gen);
         y = dist(gen);
@@ -54,7 +54,7 @@ class Edge {
 public:
     const Node* n1; // puntero al nodo
     const Node* n2; // puntero al nodo
-    int64_t peso;   // cuadrado de la distancia euclidiana
+    double peso;   // cuadrado de la distancia euclidiana
 
     /**
      * @brief Constructor de la clase Edge.

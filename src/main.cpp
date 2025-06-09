@@ -73,10 +73,9 @@ void runExpirement(int N){
     std::chrono::duration<double> MSTheapUFDuration = endMSTheapUF - startMSTheapUF;
     std::cout << "Arbol encontrado en " << MSTheapUFDuration.count() << " segundos.\n";
     
-
     // Verificar que todos obtuvieron el mismo peso
     if(!mismosPesos(MST_array, MST_array_opt, MST_heap, MST_heap_opt)){
-        std::cerr << "Error: no se obtuvieron los mismos pesos";
+        std::cerr << "Error: no se obtuvieron los mismos pesos\n";
         exit(1);
     }
 
@@ -132,7 +131,7 @@ int main(){
         std::cerr << "No se pudo escribir el resumen en 'resultados.csv'\n";
     }
 
-    for(int i=5; i<=13; i++){
+    for(int i=5; i<=12; i++){
         int N = std::pow(2, i);
         for(int j=0; j<5; j++){
             runExpirement(N);

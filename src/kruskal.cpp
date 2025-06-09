@@ -19,16 +19,16 @@ bool mismosPesos(const std::vector<Edge>& A,
     const std::vector<Edge>& C,
     const std::vector<Edge>& D) {
 
-    auto suma = [](const std::vector<Edge>& edges) -> int64_t {
-    int64_t total = 0;
-    for (const Edge& e : edges) total += e.peso;
-    return total;
+    auto suma = [](const std::vector<Edge>& edges) -> double {
+        double total = 0;
+        for (const Edge& e : edges) total += e.peso;
+        return total;
     };
 
-    int64_t pesoA = suma(A);
-    int64_t pesoB = suma(B);
-    int64_t pesoC = suma(C);
-    int64_t pesoD = suma(D);
+    double pesoA = suma(A);
+    double pesoB = suma(B);
+    double pesoC = suma(C);
+    double pesoD = suma(D);
 
     return (pesoA == pesoB) && (pesoB == pesoC) && (pesoC == pesoD);
 }
@@ -43,28 +43,15 @@ std::vector<Edge> kruskal_array(Graph& G){
     int n = G.V.size();
     std::vector<Edge> result;
 
-    std::vector<int> component(n);
-    for (int i=0; i<n; ++i) component[i] = i; // cada nodo es parte de su propio bosque
+    UnionFind uf(n);
 
-    for (const Edge& e : sorted_edges) {
-        int id1 = e.n1->id;
-        int id2 = e.n2->id;
-
-        if (component[id1] != component[id2]) {
-            result.push_back(e);
-
-            // Unir componentes: cambiar todos los nodos del componente viejo al nuevo
-            int old_comp = component[id2];
-            int new_comp = component[id1];
-
-            for (int i=0; i<n; ++i) {
-                if (component[i] == old_comp)
-                    component[i] = new_comp;
-            }
-
-            if (result.size() == n-1) break;
+    for (auto& edge : sorted_edges){
+        if (uf.union_no_opt(edge.n1->id, edge.n2->id)) { 
+            result.push_back(edge);
+            if (result.size() == n - 1) break; // cuando se encuentran n-1 aristas se termina
         }
     }
+
 
     return result;
 }
@@ -108,26 +95,13 @@ std::vector<Edge> kruskal_heap(Graph& G){
     int n = G.V.size();
     std::vector<Edge> result;
 
-    std::vector<int> component(n);
-    for (int i=0; i<n; ++i) component[i] = i; // cada nodo es parte de su propio bosque
+    UnionFind uf(n);
 
-    while (result.size() < n-1) {
-        Edge e = heap.top();
+    while(result.size() < n-1 ){
+        Edge edge = heap.top();
         heap.pop();
-
-        int id1 = e.n1->id;
-        int id2 = e.n2->id;
-
-        if (component[id1] != component[id2]) {
-            result.push_back(e);
-
-            int old_comp = component[id2];
-            int new_comp = component[id1];
-
-            for (int i=0; i<n; ++i) {
-                if (component[i] == old_comp)
-                    component[i] = new_comp;
-            }
+        if (uf.union_no_opt(edge.n1->id, edge.n2->id)) { 
+            result.push_back(edge);
         }
     }
 
@@ -137,7 +111,6 @@ std::vector<Edge> kruskal_heap(Graph& G){
 // Algoritmo de Kruskal con la optimización de find y usando un heap
 // Retorna la lista de aristas que minimiza el costo
 std::vector<Edge> kruskal_heap_Opti(Graph& G){
-    
     // Se ordenan las aristas por peso
     std::vector<Edge> sorted_edges = G.E;
     std::priority_queue heap(sorted_edges.begin(), sorted_edges.end(), sortByWeightHeap);

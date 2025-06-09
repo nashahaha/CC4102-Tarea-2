@@ -15,31 +15,21 @@ public:
     }
 
     int find_no_opt(int x) {
-        if (padre[x] == x) return x;          // caso base
-        return find_no_opt(padre[x]);         // sin path compression
+        if (padre[x] == x) return x; // caso base
+        return find_no_opt(padre[x]);
     }
 
-    bool union_(int x, int y){
-        int raiz_x = find(x);
-        int raiz_y = find(y);
-        if (raiz_x == raiz_y) return false;
-        
-        if ( rango[raiz_x]< rango[raiz_y]) std::swap(raiz_x, raiz_y); 
+    void union_(int raiz_x, int raiz_y){
+        if ( rango[raiz_x]< rango[raiz_y]) std::swap(raiz_x, raiz_y); // se hace la union al de menor rango
 
         padre[raiz_y] = raiz_x;
         
         rango[raiz_x]+= rango[raiz_y];
         
-        return true;
     }
 
-    bool union_no_opt(int x, int y){
-        int raiz_x = find_no_opt(x);
-        int raiz_y = find_no_opt(y);
-        if (raiz_x == raiz_y) return false;
-        
+    // Solo cambia el padre de la raiz y
+    void union_no_opt(int raiz_x, int raiz_y){
         padre[raiz_y] = raiz_x;
-        
-        return true;
     }
 };

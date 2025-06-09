@@ -1,5 +1,3 @@
-#include <vector>
-#include <iostream>
 #include <fstream>
 #include "kruskal.cpp"
 #include <chrono>
@@ -36,7 +34,7 @@ void runExpirement(int N){
 
     // Crear árbol con todas sus posibles aristas
     Graph G(nodos);
-    G.addAllEdges();
+
     auto endConstruction = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> constructionDuration = endConstruction - startConstruction;
     std::cout << "Grafo construido en " << constructionDuration.count() << " segundos.\n";
@@ -73,6 +71,12 @@ void runExpirement(int N){
     std::chrono::duration<double> MSTheapUFDuration = endMSTheapUF - startMSTheapUF;
     std::cout << "Arbol encontrado en " << MSTheapUFDuration.count() << " segundos.\n";
     
+    G.print();
+    printEdges(MST_array);
+    printEdges(MST_array_opt);
+    printEdges(MST_heap);
+    printEdges(MST_heap_opt);
+
     // Verificar que todos obtuvieron el mismo peso
     if(!mismosPesos(MST_array, MST_array_opt, MST_heap, MST_heap_opt)){
         std::cerr << "Error: no se obtuvieron los mismos pesos\n";
@@ -113,25 +117,14 @@ void runExpirement(int N){
  * se registran en un archivo CSV.
  *
  * ### Detalles del experimento:
- * - Se prueban tamaños de entrada N = 2^i con i [5, 13] (de 32 a 8192 nodos).
+ * - Se prueban tamaños de entrada N = 2^i con i en [5, 13] (de 32 a 8192 nodos).
  * - Cada tamaño se ejecuta 5 veces.
  *
  * @return int 0 si el programa finaliza correctamente.
  */
 int main(){
-    std::ofstream data("./csv/resultados.csv", std::ios::app);
-    if(data){
-        data << "n tuplas," 
-             << "Tiempo de contruccion," 
-             << "Array Ordenado," 
-             << "Array Ordenado Optimizado," 
-             << "Heap," 
-             << "Heap Optimizado\n";
-    } else {
-        std::cerr << "No se pudo escribir el resumen en 'resultados.csv'\n";
-    }
 
-    for(int i=5; i<=12; i++){
+    for(int i=5; i<=13; i++){
         int N = std::pow(2, i);
         for(int j=0; j<5; j++){
             runExpirement(N);

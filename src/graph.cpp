@@ -8,8 +8,8 @@
  * @class Node
  * @brief Representa un nodo
  *
- * La clase Node representa un nodo como un par ordenado de enteros de 64 bits (x, y).
- * Se puede crear el nodo con valores definidos o asignarlos aleatoriamente en el rango [-50, 50].
+ * La clase Node representa un nodo como un par ordenado de reales de 64 bits (x, y).
+ * Se puede crear el nodo con valores definidos o asignarlos aleatoriamente en el rango [0, 1].
  */
 class Node {
 public:
@@ -30,7 +30,7 @@ public:
     /**
      * @brief Constructor por defecto.
      * 
-     * Crea un nodo con coordenadas aleatorias en el rango [-50, 50].
+     * Crea un nodo con coordenadas aleatorias en el rango [0, 1].
      */
     Node() {
         std::random_device rd;
@@ -72,9 +72,9 @@ public:
 
 /**
  * @class Graph
- * @brief Representa un grafo no dirigido completo con nodos y aristas ponderadas.
+ * @brief Representa un grafo completo no dirigido con aristas ponderadas.
  *
- * Dado un conjunto de nodos, la clase Graph permite crear todas las aristas posibles entre ellos.
+ * Dado un conjunto de nodos la clase Graph permite crear todas las aristas posibles entre ellos.
  * También proporciona una función para imprimir la estructura del grafo.
  */
 class Graph{
@@ -86,28 +86,22 @@ public:
      * @brief Constructor del grafo.
      *
      * Inicializa el grafo con una lista de nodos, asignando un identificador único a cada uno.
+     * Crea las N(N-1)/2 aristas posibles entre los nodos existentes.
+     * No se crean self-loops.
      *
      * @param Vertices Vector de nodos que compondrán el grafo.
      */
     Graph(std::vector<Node> Vertices): V(Vertices) { 
-        for (int i=0; i<V.size(); i++) V[i].id = i; // Asigna un id a cada nodo
-    }
-
-  /**
-     * @brief Genera todas las aristas posibles entre los nodos del grafo.
-     *
-     * Crea las N(N-1)/2 aristas posibles entre los nodos existentes.
-     * Las aristas anteriores se eliminan antes de la creación. No se crean self-loops.
-     */
-    void addAllEdges(){
-        E.clear();
         for (int i=0; i<V.size(); i++){
-            for(int j=i+1; j<V.size(); j++){
+            V[i].id = i; // Asigna un id a cada nodo
+            
+            for(int j=i+1; j<V.size(); j++){ // Crea las aristas
                 Edge a(&V[i], &V[j]);
                 E.push_back(a);
             }
-        }
+        } 
     }
+
 
     /**
      * @brief Imprime los nodos y aristas del grafo.
@@ -118,7 +112,6 @@ public:
      * @code
      * std::vector<Node> nodos1 = { Node(1, 2), Node(4, 6), Node(-3, 7) };
      * Graph g1(nodos1);
-     * g1.addAllEdges();
      * g1.print();
      * @endcode
      *

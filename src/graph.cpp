@@ -1,25 +1,41 @@
-// Definición de un grafo
 #include <vector>
 #include <random>
 #include <iostream>
 #include <cmath> // contiene pow
 
 
-// Cada nodo es un par ordenado de enteros de 64 bits
+/**
+ * @class Node
+ * @brief Representa un nodo
+ *
+ * La clase Node representa un nodo como un par ordenado de enteros de 64 bits (x, y).
+ * Se puede crear el nodo con valores definidos o asignarlos aleatoriamente en el rango [-50, 50].
+ */
 class Node {
 public:
     int id; // Lo asigna el grafo, se usa en UnionFind
     int64_t x;
     int64_t y;
     
-    // Constructor: asigna los valores de (x,y) al nodo
+    /**
+     * @brief Constructor con valores definidos.
+     * 
+     * Crea un nodo con coordenadas (x_val, y_val).
+     * 
+     * @param x_val Valor de la coordenada X.
+     * @param y_val Valor de la coordenada Y.
+     */
     Node(int64_t x_val, int64_t y_val) : x(x_val), y(y_val) {} 
 
-    // Constructor: si no le dan los valores (x,y) crea valores aleatorios
+    /**
+     * @brief Constructor por defecto.
+     * 
+     * Crea un nodo con coordenadas aleatorias en el rango [-50, 50].
+     */
     Node() {
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<int64_t> dist(-5000, 5000);
+        std::uniform_int_distribution<int64_t> dist(-50, 50);
 
         x = dist(gen);
         y = dist(gen);
@@ -27,38 +43,64 @@ public:
 };
 
 
-// Aristas con peso
+/**
+ * @class Edge
+ * @brief Representa una arista con peso entre dos nodos.
+ *
+ * La clase Edge modela una arista entre dos nodos
+ * El peso de la arista es el cuadrado de la distancia euclidiana entre los dos nodos.
+ */
 class Edge {
 public:
     const Node* n1; // puntero al nodo
     const Node* n2; // puntero al nodo
     int64_t peso;   // cuadrado de la distancia euclidiana
 
-    // Constructor: calcula el peso de una arista al ser creada
+    /**
+     * @brief Constructor de la clase Edge.
+     *
+     * Crea una arista entre dos nodos y calcula automáticamente su peso.
+     *
+     * @param nodo1 Puntero al primer nodo.
+     * @param nodo2 Puntero al segundo nodo.
+     */
     Edge(Node* nodo1, Node* nodo2) : n1(nodo1), n2(nodo2){ 
         peso = std::pow((nodo1->x - nodo2->x), 2) + std::pow((nodo1->y - nodo2->y), 2);
     }
 };
 
 
-// La idea es pasarle una lista de nodos y el grafo crea las N*(N-1)/2 aristas posibles entre ellos
+/**
+ * @class Graph
+ * @brief Representa un grafo no dirigido completo con nodos y aristas ponderadas.
+ *
+ * Dado un conjunto de nodos, la clase Graph permite crear todas las aristas posibles entre ellos.
+ * También proporciona una función para imprimir la estructura del grafo.
+ */
 class Graph{
 public:
     std::vector<Node> V; // Lista de nodos
     std::vector<Edge> E; // Lista de aristas
 
+    /**
+     * @brief Constructor del grafo.
+     *
+     * Inicializa el grafo con una lista de nodos, asignando un identificador único a cada uno.
+     *
+     * @param Vertices Vector de nodos que compondrán el grafo.
+     */
     Graph(std::vector<Node> Vertices): V(Vertices) { 
         for (int i=0; i<V.size(); i++) V[i].id = i; // Asigna un id a cada nodo
     }
 
-
-    /**
-     * Este método crea todas la aristas posibles para los nodos que tenga el grafo.
-     * Si el grafo ya tenía aristas agregadas se vaciarán antes.
+  /**
+     * @brief Genera todas las aristas posibles entre los nodos del grafo.
+     *
+     * Crea las N(N-1)/2 aristas posibles entre los nodos existentes.
+     * Las aristas anteriores se eliminan antes de la creación. No se crean self-loops.
      */
     void addAllEdges(){
         E.clear();
-        // Se asume que no hay self loops
         for (int i=0; i<V.size(); i++){
             for(int j=i+1; j<V.size(); j++){
                 Edge a(&V[i], &V[j]);
@@ -68,29 +110,34 @@ public:
     }
 
     /**
-     * Este método imprime todos los nodos creados y las aristas creadas con sus respectivos pesos
-        Ejemplo de uso:
-            std::vector<Node> nodos1 = { Node(1, 2), Node(4, 6), Node(-3, 7) };
-            Graph g1(nodos1);
-            g1.addAllEdges();
-            g1.print();
-            
-        Devuelve:
-            Nodos:
-                Nodo 0: (1, 2)
-                Nodo 1: (4, 6)
-                Nodo 2: (-3, 7)
-
-            Aristas:
-                (0, 1)  peso: 25
-                (0, 2)  peso: 41
-                (1, 2)  peso: 50
+     * @brief Imprime los nodos y aristas del grafo.
+     *
+     * Muestra los nodos con sus coordenadas e identificadores, y las aristas con sus pesos.
+     *
+     * ### Ejemplo de uso:
+     * @code
+     * std::vector<Node> nodos1 = { Node(1, 2), Node(4, 6), Node(-3, 7) };
+     * Graph g1(nodos1);
+     * g1.addAllEdges();
+     * g1.print();
+     * @endcode
+     *
+     * ### Salida esperada:
+     * @verbatim
+     * Nodos:
+     *   Nodo 0:(1, 2)  Nodo 1:(4, 6)  Nodo 2:(-3, 7)
+     *
+     * Aristas:
+     *   (0, 1)  peso: 25
+     *   (0, 2)  peso: 41
+     *   (1, 2)  peso: 50
+     * @endverbatim
      */
     
     void print() const {
         std::cout << "\nNodos:" << std::endl;
         for (size_t i = 0; i < V.size(); ++i) {
-            std::cout << "  Nodo " << V[i].id << ": (" << V[i].x << ", " << V[i].y << "), ";
+            std::cout << "  Nodo " << V[i].id << ":(" << V[i].x << ", " << V[i].y << "), ";
         }
     
         std::cout << "\nAristas:" << std::endl;
@@ -100,31 +147,4 @@ public:
     }
 };
 
-class UnionFind {
-    std::vector<int> padre; // Arreglo que marca quien es el padre de cada nodo
-    std::vector<int> rango; // Rango de cada nodo
-public:
-    UnionFind(int n): padre(n), rango(n, 1){
-        for(int i=0; i<n; i++) padre[i] = i; // Cada nodo parte siendo su propio padre
-    }
 
-    int find(int x){
-        if(padre[x] != x) padre[x] = find(padre[x]);
-        return padre[x];
-    }
-
-    bool union_(int x, int y){
-        int raiz_x = find(x);
-        int raiz_y = find(y);
-        if (raiz_x == raiz_y) return false;
-
-        
-        if ( rango[raiz_x]< rango[raiz_y]) std::swap(raiz_x, raiz_y); 
-
-        padre[raiz_y] = raiz_x;
-        
-        rango[raiz_x]+= rango[raiz_y];
-        
-        return true;
-    }
-};

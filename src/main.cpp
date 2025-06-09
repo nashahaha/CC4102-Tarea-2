@@ -3,25 +3,29 @@
 #include <fstream>
 #include "kruskal.cpp"
 #include <chrono>
-bool mismosPesos(const std::vector<Edge>& A,
-                 const std::vector<Edge>& B,
-                 const std::vector<Edge>& C,
-                 const std::vector<Edge>& D) {
 
-    auto suma = [](const std::vector<Edge>& edges) -> int64_t {
-    int64_t total = 0;
-    for (const Edge& e : edges) total += e.peso;
-    return total;
-    };
-
-    int64_t pesoA = suma(A);
-    int64_t pesoB = suma(B);
-    int64_t pesoC = suma(C);
-    int64_t pesoD = suma(D);
-
-    return (pesoA == pesoB) && (pesoB == pesoC) && (pesoC == pesoD);
-}
-
+/**
+ * @brief Ejecuta un experimento de rendimiento para comparar variantes del algoritmo de Kruskal.
+ *
+ * Esta función genera un grafo completo de N nodos con posiciones aleatorias, calcula todas las aristas posibles,
+ * y luego ejecuta cuatro variantes del algoritmo de Kruskal para obtener el Árbol de Expansión Mínima (MST).
+ * Se mide y compara el tiempo de ejecución de cada variante:
+ * 
+ * 1. Kruskal con arreglo ordenado (sin Union-Find).
+ * 2. Kruskal con arreglo ordenado + Union-Find.
+ * 3. Kruskal con heap (sin Union-Find).
+ * 4. Kruskal con heap + Union-Find.
+ *
+ * Además, verifica que todas las variantes produzcan MSTs con el mismo peso total y guarda los resultados en un archivo CSV.
+ *
+ * @param N Cantidad de nodos a generar para el grafo.
+ *
+ * ### CSV generado
+ * La función guarda una línea por experimento en el archivo `./csv/resultados.csv`, con el siguiente formato:
+ * ```
+ * N,tiempo_construccion,kruskal_array,kruskal_array_uf,kruskal_heap,kruskal_heap_uf
+ * ```
+ */
 void runExpirement(int N){
     // Contar el tiempo de construcción
     std::cout << "Creando grafo de " << N << " aristas \n";
@@ -87,23 +91,8 @@ void runExpirement(int N){
     std::cout <<   "|   Tiempo de Kruskal con optimización find y usando un heap: " << MSTheapUFDuration.count() << " segundos. \n";
     std::cout <<   "-----------------------------------------------------------------------------\n";
 
-    // Guardar resumen en archivo de texto (modo append)
-    std::ofstream summary("resumen_experimentos.txt", std::ios::app);
-    if (summary) {
-        summary << "----- Resultado del experimento -----\n";
-        summary << "Tamaño del input: " << N << " pares de enteros.       \n";
-        summary << "Tiempo de creación del grafo: " << constructionDuration.count() << "\n";
-        summary << "Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: " << MSTarrayDuration.count() << " segundos. \n";
-        summary << "Tiempo de Kruskal con optimización find y usando un arreglo ordenado: " << MSTarrayUFDuration.count() << " segundos.\n";
-        summary << "Tiempo de Kruskal sin optimización find y usando un heap: " << MSTheapDuration.count() << " segundos. \n";
-        summary << "Tiempo de Kruskal con optimización find y usando un heap: " << MSTheapUFDuration.count() << " segundos. \n";
-        summary << "--------------------------------------\n\n";
-        summary.close();
-    } else {
-        std::cerr << "No se pudo escribir el resumen en 'resumen_experimentos.txt'\n";
-    }
-
-    std::ofstream data("resultados.csv", std::ios::app);
+    // Guardar resumen de datos como csv
+    std::ofstream data("./csv/resultados.csv", std::ios::app);
     if(data){
         data << N << "," 
              << constructionDuration.count() << "," 
@@ -116,9 +105,34 @@ void runExpirement(int N){
     }
 }
 
-int main(){
 
-    for(int i=5; i<=15; i++){
+/**
+ * @brief Función principal del programa.
+ *
+ * Ejecuta una serie de experimentos para medir el rendimiento de distintas variantes
+ * del algoritmo de Kruskal sobre grafos completos de tamaño creciente. Los resultados
+ * se registran en un archivo CSV.
+ *
+ * ### Detalles del experimento:
+ * - Se prueban tamaños de entrada N = 2^i con i [5, 13] (de 32 a 8192 nodos).
+ * - Cada tamaño se ejecuta 5 veces.
+ *
+ * @return int 0 si el programa finaliza correctamente.
+ */
+int main(){
+    std::ofstream data("./csv/resultados.csv", std::ios::app);
+    if(data){
+        data << "n tuplas," 
+             << "Tiempo de contruccion," 
+             << "Array Ordenado," 
+             << "Array Ordenado Optimizado," 
+             << "Heap," 
+             << "Heap Optimizado\n";
+    } else {
+        std::cerr << "No se pudo escribir el resumen en 'resultados.csv'\n";
+    }
+
+    for(int i=5; i<=13; i++){
         int N = std::pow(2, i);
         for(int j=0; j<5; j++){
             runExpirement(N);

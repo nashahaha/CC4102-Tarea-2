@@ -3,6 +3,7 @@
 #include <algorithm>    // std::sort
 #include <queue>
 #include "graph.cpp"
+#include "UnionFind.cpp"
 
 bool sortByWeight(Edge a1, Edge a2){
     return a1.peso<a2.peso;
@@ -11,6 +12,25 @@ bool sortByWeight(Edge a1, Edge a2){
 
 bool sortByWeightHeap(Edge a1, Edge a2){
     return a1.peso>a2.peso;
+}
+
+bool mismosPesos(const std::vector<Edge>& A,
+    const std::vector<Edge>& B,
+    const std::vector<Edge>& C,
+    const std::vector<Edge>& D) {
+
+    auto suma = [](const std::vector<Edge>& edges) -> int64_t {
+    int64_t total = 0;
+    for (const Edge& e : edges) total += e.peso;
+    return total;
+    };
+
+    int64_t pesoA = suma(A);
+    int64_t pesoB = suma(B);
+    int64_t pesoC = suma(C);
+    int64_t pesoD = suma(D);
+
+    return (pesoA == pesoB) && (pesoB == pesoC) && (pesoC == pesoD);
 }
 
 // Algoritmo de Kruskal sin la optimización de find y usando un arreglo de aristas ordenado

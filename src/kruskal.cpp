@@ -1,7 +1,7 @@
 #include <algorithm>    // std::sort
 #include <queue>
 #include "UnionFind.cpp"
-#include "aux.cpp"
+#include "aux_f.cpp"
 
 
 // Algoritmo de Kruskal sin la optimización de find y usando un arreglo de aristas ordenado

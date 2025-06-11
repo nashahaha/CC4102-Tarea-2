@@ -71,11 +71,11 @@ void runExpirement(int N){
     std::chrono::duration<double> MSTheapUFDuration = endMSTheapUF - startMSTheapUF;
     std::cout << "Arbol encontrado en " << MSTheapUFDuration.count() << " segundos.\n";
     
-    G.print();
-    printEdges(MST_array);
-    printEdges(MST_array_opt);
-    printEdges(MST_heap);
-    printEdges(MST_heap_opt);
+    //G.print();
+    //printEdges(MST_array);
+    //printEdges(MST_array_opt);
+    //printEdges(MST_heap);
+    //printEdges(MST_heap_opt);
 
     // Verificar que todos obtuvieron el mismo peso
     if(!mismosPesos(MST_array, MST_array_opt, MST_heap, MST_heap_opt)){

@@ -20,7 +20,7 @@ std::vector<Edge> kruskal_array(Graph& G){
         int raiz_x = uf.find_no_opt(edge.n1->id);
         int raiz_y = uf.find_no_opt(edge.n2->id);
         if (raiz_x != raiz_y) { 
-            uf.union_no_opt(raiz_x, raiz_y);
+            uf.union_(raiz_x, raiz_y);
             result.push_back(edge);
             if (result.size() == n - 1) break; // cuando se encuentran las n-1 aristas se termina
         }
@@ -83,7 +83,7 @@ std::vector<Edge> kruskal_heap(Graph& G){
         int raiz_y = uf.find_no_opt(edge.n2->id);
 
         if (raiz_x != raiz_y) { 
-            uf.union_no_opt(raiz_x, raiz_y);
+            uf.union_(raiz_x, raiz_y);
             result.push_back(edge);
         }
     }

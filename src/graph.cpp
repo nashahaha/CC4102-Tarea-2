@@ -96,8 +96,8 @@ public:
             V[i].id = i; // Asigna un id a cada nodo
             
             for(int j=i+1; j<V.size(); j++){ // Crea las aristas
-                Edge a(&V[i], &V[j]);
-                E.push_back(a);
+                Edge arista(&V[i], &V[j]);
+                E.push_back(arista);
             }
         } 
     }

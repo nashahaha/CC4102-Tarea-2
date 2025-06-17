@@ -3,9 +3,17 @@
 #include "UnionFind.cpp"
 #include "aux_f.cpp"
 
-
-// Algoritmo de Kruskal sin la optimización de find y usando un arreglo de aristas ordenado
-// Retorna la lista de aristas que minimiza el costo
+/**
+ * @brief Implementación del algoritmo de Kruskal sin optimización en la operación find y utilizando un arreglo de aristas ordenado.
+ *
+ * Esta función construye un árbol de expansión mínima (MST) a partir de un grafo no dirigido.
+ * Utiliza el algoritmo de Kruskal, ordenando previamente las aristas por peso en orden ascendente.
+ * Las operaciones de unión y búsqueda se realizan mediante una estructura `UnionFind`, pero
+ * la función `find_no_opt` no aplica compresión de caminos.
+ *
+ * @param G Grafo de entrada, que contiene un conjunto de nodos (`G.V`) y aristas (`G.E`).
+ * @return Un vector con las aristas que conforman el árbol de expansión mínima del grafo.
+ */
 std::vector<Edge> kruskal_array(Graph& G){
     // Se ordenan las aristas por peso
     std::vector<Edge> sorted_edges = G.E;
@@ -25,13 +33,18 @@ std::vector<Edge> kruskal_array(Graph& G){
             if (result.size() == n - 1) break; // cuando se encuentran las n-1 aristas se termina
         }
     }
-
-
     return result;
 }
 
-// Algoritmo de Kruskal con la optimización de find y usando un arreglo de aristas ordenado
-// Retorna la lista de aristas que minimiza el costo
+/**
+ * @brief Implementación del algoritmo de Kruskal con optimización en la operación find y utilizando un arreglo de aristas ordenado.
+ *
+ * Esta función construye un árbol de expansión mínima (MST) a partir de un grafo no dirigido.
+ * Utiliza el algoritmo de Kruskal, ordenando previamente las aristas por peso en orden ascendente.
+ *
+ * @param G Grafo de entrada, que contiene un conjunto de nodos (`G.V`) y aristas (`G.E`).
+ * @return Un vector con las aristas que conforman el árbol de expansión mínima del grafo.
+ */
 std::vector<Edge> kruskal_array_Opti(Graph& G){
     
     // Se ordenan las aristas por peso
@@ -51,6 +64,7 @@ std::vector<Edge> kruskal_array_Opti(Graph& G){
             uf.union_(raiz_x, raiz_y);
             result.push_back(edge);
             if (result.size() == n - 1) break; // cuando se encuentran n-1 aristas se termina
+            
         }
     }
 
@@ -63,8 +77,18 @@ std::vector<Edge> kruskal_array_Opti(Graph& G){
 // ------------------------------------------------------------------------------------------------
 
 
-// Algoritmo de Kruskal sin la optimización de find y usando un heap
-// Retorna la lista de aristas que minimiza el costo
+/**
+ * @brief Implementación del algoritmo de Kruskal sin optimización en la operación find y utilizando un heap.
+ *
+ * Esta función construye un árbol de expansión mínima (MST) a partir de un grafo no dirigido.
+ * A diferencia de la versión basada en arreglo ordenado, aquí se utiliza un heap (`priority_queue`) 
+ * para obtener iterativamente la arista de menor peso..
+ *
+ * Las búsquedas de raíces (`find_no_opt`) no están optimizadas, es decir, no utilizan compresión de caminos.
+ *
+ * @param G Grafo de entrada, que contiene un conjunto de nodos (`G.V`) y aristas (`G.E`).
+ * @return Un vector con las aristas que conforman el árbol de expansión mínima del grafo.
+ */
 std::vector<Edge> kruskal_heap(Graph& G){
     // Se ordenan las aristas por peso
     std::vector<Edge> sorted_edges = G.E;
@@ -87,12 +111,19 @@ std::vector<Edge> kruskal_heap(Graph& G){
             result.push_back(edge);
         }
     }
-
     return result;
 }
 
-// Algoritmo de Kruskal con la optimización de find y usando un heap
-// Retorna la lista de aristas que minimiza el costo
+/**
+ * @brief Implementación del algoritmo de Kruskal con optimización en la operación find y utilizando un heap.
+ *
+ * Esta función construye un árbol de expansión mínima (MST) a partir de un grafo no dirigido.
+ * Utiliza una cola de prioridad (`std::priority_queue`) para seleccionar iterativamente la arista de menor peso
+ * sin necesidad de ordenar completamente el conjunto de aristas. Además, emplea una versión optimizada de la operación `find`.
+ *
+ * @param G Grafo de entrada, que contiene un conjunto de nodos (`G.V`) y aristas (`G.E`).
+ * @return Un vector con las aristas que conforman el árbol de expansión mínima del grafo.
+ */
 std::vector<Edge> kruskal_heap_Opti(Graph& G){
     // Se ordenan las aristas por peso
     std::vector<Edge> sorted_edges = G.E;

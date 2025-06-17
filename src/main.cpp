@@ -9,10 +9,10 @@
  * y luego ejecuta cuatro variantes del algoritmo de Kruskal para obtener el Árbol de Expansión Mínima (MST).
  * Se mide y compara el tiempo de ejecución de cada variante:
  * 
- * 1. Kruskal con arreglo ordenado (sin Union-Find).
- * 2. Kruskal con arreglo ordenado + Union-Find.
- * 3. Kruskal con heap (sin Union-Find).
- * 4. Kruskal con heap + Union-Find.
+ * 1. Kruskal con arreglo ordenado con Union-Find sin optimizar.
+ * 2. Kruskal con arreglo ordenado son Union-Find optimizado.
+ * 3. Kruskal con heap con Union-Find sin optimizar.
+ * 4. Kruskal con heap con Union-Find optimizado.
  *
  * Además, verifica que todas las variantes produzcan MSTs con el mismo peso total y guarda los resultados en un archivo CSV.
  *
@@ -21,23 +21,24 @@
  * ### CSV generado
  * La función guarda una línea por experimento en el archivo `./csv/resultados.csv`, con el siguiente formato:
  * ```
- * N,tiempo_construccion,kruskal_array,kruskal_array_uf,kruskal_heap,kruskal_heap_uf
+ * N, tiempo_construccion, kruskal_array, kruskal_array_uf, kruskal_heap, kruskal_heap_uf
  * ```
  */
 void runExpirement(int N){
     // Contar el tiempo de construcción
     std::cout << "Creando grafo de " << N << " aristas \n";
     auto startConstruction = std::chrono::high_resolution_clock::now();
+    
     // Crear N nodos
     std::vector<Node> nodos = {};
     for (int i=0; i<N; i++) nodos.push_back(Node());
-
     // Crear árbol con todas sus posibles aristas
     Graph G(nodos);
 
     auto endConstruction = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> constructionDuration = endConstruction - startConstruction;
     std::cout << "Grafo construido en " << constructionDuration.count() << " segundos.\n";
+
 
     // Buscar árbol con los cuatro métodos
     std::cout << "Buscando árbol cobertor con un arreglo ordenado: \n";
@@ -48,7 +49,7 @@ void runExpirement(int N){
     std::cout << "Arbol encontrado en " << MSTarrayDuration.count() << " segundos.\n";
 
 
-    std::cout << "Buscando árbol cobertor con un arreglo ordenado y Union-Find: \n";
+    std::cout << "Buscando árbol cobertor con un arreglo ordenado y Union-Find optimizado: \n";
     auto startMSTarrayUF = std::chrono::high_resolution_clock::now();
     std::vector<Edge> MST_array_opt = kruskal_array_Opti(G);
     auto endMSTarrayUF = std::chrono::high_resolution_clock::now();
@@ -64,18 +65,13 @@ void runExpirement(int N){
     std::cout << "Arbol encontrado en " << MSTheapDuration.count() << " segundos.\n";
     
 
-    std::cout << "Buscando árbol cobertor con un heap y Union Find: \n";
+    std::cout << "Buscando árbol cobertor con un heap y Union Find optimizado: \n";
     auto startMSTheapUF = std::chrono::high_resolution_clock::now();
     std::vector<Edge> MST_heap_opt = kruskal_heap_Opti(G);
     auto endMSTheapUF = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> MSTheapUFDuration = endMSTheapUF - startMSTheapUF;
     std::cout << "Arbol encontrado en " << MSTheapUFDuration.count() << " segundos.\n";
     
-    //G.print();
-    //printEdges(MST_array);
-    //printEdges(MST_array_opt);
-    //printEdges(MST_heap);
-    //printEdges(MST_heap_opt);
 
     // Verificar que todos obtuvieron el mismo peso
     if(!mismosPesos(MST_array, MST_array_opt, MST_heap, MST_heap_opt)){
@@ -83,11 +79,10 @@ void runExpirement(int N){
         exit(1);
     }
 
-
     // Mostrar resultados
     std::cout << "\n-------------------------Resultados del experimento:-------------------------\n";
-    std::cout <<   "|   Tamaño del input: " << N << " pares de enteros.       \n";
-    std::cout <<   "|   Tiempo de creación del grafo: " << constructionDuration.count() << "\n";
+    std::cout <<   "|   Tamaño del input: " << N << " puntos.       \n";
+    std::cout <<   "|   Tiempo de creación del grafo: " << constructionDuration.count() << " segundos.\n";
     std::cout <<   "|   Tiempo de Kruskal sin optimización find y usando un arreglo ordenado: " << MSTarrayDuration.count() << " segundos.  \n";
     std::cout <<   "|   Tiempo de Kruskal con optimización find y usando un arreglo ordenado: " << MSTarrayUFDuration.count() << " segundos.\n";
     std::cout <<   "|   Tiempo de Kruskal sin optimización find y usando un heap: " << MSTheapDuration.count() << " segundos. \n";
@@ -120,16 +115,14 @@ void runExpirement(int N){
  * - Se prueban tamaños de entrada N = 2^i con i en [5, 13] (de 32 a 8192 nodos).
  * - Cada tamaño se ejecuta 5 veces.
  *
- * @return int 0 si el programa finaliza correctamente.
+ * @return 0 si el programa finaliza correctamente.
  */
 int main(){
-
     for(int i=5; i<=13; i++){
         int N = std::pow(2, i);
         for(int j=0; j<5; j++){
             runExpirement(N);
         }
     }
-
     return 0;
 }
